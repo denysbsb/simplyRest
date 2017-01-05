@@ -3,6 +3,8 @@ simple RESTFUL API using PHP and Mysql
 
 how to install
 
+/_sql import file in path simplyRest
+
 php composer.phar install 
 
 or 
