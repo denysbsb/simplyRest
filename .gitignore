@@ -1,7 +1,6 @@
 # Specifies files to intentionally ignore when using Git
 
 # arquivos de projeto de IDE
-composer.phar
 
 # arquivos privados de IDE
 *.sublime-workspace
