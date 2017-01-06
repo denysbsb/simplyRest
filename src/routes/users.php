@@ -32,10 +32,18 @@ $app->post('/api/users/login', function(Request $request, Response $response){
         $stmt = $db->query($sql);
         $user = $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;
+    
+        if(!$user){
+            $response = $response->withStatus(500,'Authentication Failed');
+            echo "Error".$response;
+            return $response;
+        }
+
         echo json_encode($user);
 
     } catch(PDOException $e){
         echo '{"error": {"text": '.$e->getMessage().'}';
+        return $response;
     }
 });
 
