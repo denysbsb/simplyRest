@@ -1,22 +1,26 @@
 # simplyRest
 simple RESTFUL API using PHP and Mysql
 
-how to install
+### Instalation
 
-/_sql import file in path simplyRest
+Create database or import _sql/simplyRest
 
-php composer.phar install 
+Config params db/config
 
-or 
+```sh
+$ php composer.phar install 
+or
+$ composer
+```
 
-composer
+### Usage
+url: mydomain/public
 
-
--> domain/public
-
-API
+### API
+```sh
 $ GET /api/users
 $ GET /api/users/{id}
 $ POST /api/users/add
 $ PUT /api/users/update/{id}
 $ DELETE /api/users/delete/{id}
+```

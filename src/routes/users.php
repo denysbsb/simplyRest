@@ -81,14 +81,14 @@ $app->get('/api/users/{id}', function(Request $request, Response $response){
 
 // Add users
 $app->post('/api/users/add', function(Request $request, Response $response){
-    $first_name = $request->getParam('name');
+    $name = $request->getParam('name');
     $last_name = $request->getParam('last_name');
     $phone = $request->getParam('phone');
     $email = $request->getParam('email');
     $address = $request->getParam('address');
 
-    $sql = "INSERT INTO users (first_name,last_name,phone,email,address,city,state) VALUES
-    (:first_name,:last_name,:phone,:email,:address,:city,:state)";
+    $sql = "INSERT INTO users (name,last_name,phone,email,address) VALUES
+    (:name,:last_name,:phone,:email,:address)";
 
     try{
         // Get DB Object
@@ -98,7 +98,7 @@ $app->post('/api/users/add', function(Request $request, Response $response){
 
         $stmt = $db->prepare($sql);
 
-        $stmt->bindParam(':name', $first_name);
+        $stmt->bindParam(':name', $name);
         $stmt->bindParam(':last_name',  $last_name);
         $stmt->bindParam(':phone',      $phone);
         $stmt->bindParam(':email',      $email);
