@@ -1,5 +1,5 @@
 # simplyRest
-simple RESTFUL API using PHP and Mysql
+Simple RESTFUL API using PHP and Mysql
 
 ### Instalation
 
