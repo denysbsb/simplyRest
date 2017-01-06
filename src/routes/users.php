@@ -16,6 +16,29 @@ $app->add(function ($req, $res, $next) {
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 });
 
+// Login users
+$app->post('/api/users/login', function(Request $request, Response $response){
+    $username = (string)$request->getParam('username');
+    $password = (string)$request->getParam('password');
+
+    $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+
+    try{
+        // Get DB Object
+        $db = new db();
+        // Connect
+        $db = $db->connect();
+
+        $stmt = $db->query($sql);
+        $user = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $db = null;
+        echo json_encode($user);
+
+    } catch(PDOException $e){
+        echo '{"error": {"text": '.$e->getMessage().'}';
+    }
+});
+
 // Get All users
 $app->get('/api/users', function(Request $request, Response $response){
     $sql = "SELECT * FROM users";
