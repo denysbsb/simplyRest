@@ -32,16 +32,18 @@ CREATE TABLE `users` (
   `last_name` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `address` varchar(255) NOT NULL
+  `address` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `users` (`id`, `name`, `last_name`, `phone`, `email`, `address`) VALUES
-(2, 'Pir0c', 'NP', '333-333-3333', 'np@yahoo.com', '33 Qi13'),
-(3, 'Brad', 'Pitt', '333-333-5555', 'brad@test.com', '333 Lago 12');
+INSERT INTO `users` (`id`, `name`, `last_name`, `phone`, `email`, `address`, `username`, `password`) VALUES
+(2, 'Pir0', 'NP', '333-333-3333', 'np@yahoo.com', '33 Qi13', '123', '123'),
+(3, 'Brad', 'Pitt', '333-333-5555', 'brad@test.com', '333 Lago 12', 'abc', 'abc');
 
 --
 -- Indexes for dumped tables
