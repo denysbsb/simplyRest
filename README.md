@@ -3,9 +3,9 @@ Simple RESTFUL API using PHP and Mysql datastorage
 
 ### Instalation
 
-Create database or import _sql/simplyRest
+- Create database and table users(id, name, last_name, phone, email, address, username, password) or import _sql/simplyRest
 
-Config params db/config
+- Config params in ./db/config
 
 ```sh
 $ php composer.phar install 
